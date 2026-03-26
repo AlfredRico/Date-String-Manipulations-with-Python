@@ -533,7 +533,7 @@ plt.show()
 <div class="subsection-header">2016-2018 Quarterly Strikes Visualization</div>
 <div class="subsection-content">
 <p>Analysis now shifts focus to quarterly lightning strikes for the full date range of avalaible data. Because it is easiest to work with numbers in millions, <code>.div(1000000)</code> will be used during aggregation before plotting.</p>
-<p>A <code>number_of_strikes_formatted</code> column is added representing the number in millions.</p>
+<p>A <code>numbr_of_strikes_formatted</code> column is added representing the number in millions.</p>
 <p>A function is implemented to help label each bar in the graph with its corresponding <code>number_of_strikes_formatted</code> text. The pyplot function uses positional arguments x, y, and s for x-axis, y-axis, and text respectively.</p>
 <details><summary>View Code</summary><pre>
 # 2016-2018 data by quarter and sum
@@ -643,8 +643,32 @@ plt.show()
 <div class="results">
 <strong>Results:</strong>
 
+<h4 style="margin-top:10px;"><code>.head()</code></h4>
+
+<div style="overflow-x:auto;">
+<table class="df-table enhanced">
+<thead>
+<tr>
+<th></th>
+<th>quarter</th>
+<th>number_of_strikes</th>
+<th>number_of_strikes_formatted</th>
+<th>quarter_number</th>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>2016-Q1</td><td>2683798</td><td>2.7M</td><td>Q1</td><td>2016</td></tr>
+<tr><td>1</td><td>2016-Q2</td><td>15084857</td><td>15.1M</td><td>Q2</td><td>2016</td></tr>
+<tr><td>2</td><td>2016-Q3</td><td>21843820</td><td>21.8M</td><td>Q3</td><td>2016</td></tr>
+<tr><td>3</td><td>2016-Q4</td><td>1969754</td><td>2.0M</td><td>Q4</td><td>2016</td></tr>
+<tr><td>4</td><td>2017-Q1</td><td>2444279</td><td>2.4M</td><td>Q1</td><td>2017</td></tr>
+</tbody>
+</table>
+</div>
+
 <div style="
-  margin-top:10px;
+  margin-top:20px;
   background:#ffffff;
   padding:10px;
   border-radius:6px;
