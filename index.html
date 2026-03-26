@@ -325,7 +325,7 @@ body.light-mode .df-table thead {
 <div class="subsection">
 <div class="subsection-header">Data Loading & Inspection</div>
 <div class="subsection-content">
-<p>Before getting started, all required libraries and extensions are imported, the dataset is loaded, and a brief overview is obtained using <code>.head()</code></p>
+<p>Before getting started, all required libraries and extensions are imported, the dataset is loaded, and a brief overview is obtained using <code>.head()</code> while <code>.info()</code> is used to assess data types and data shape.</p>
 <details><summary>View Code</summary><pre>
 # Import
 import pandas as pd
@@ -335,6 +335,7 @@ import seaborn as sns
 # Load dataset
 df = pd.read_csv('lightning_strikes_dataset.csv')
 df.head()
+df.info()
 </pre></details>
 
 <div class="results">
@@ -408,7 +409,9 @@ memory usage: 239.8+ MB
 </div>
 <div class="subsection-summary">
 <div class="summary-header">Summary</div>
-<div class="summary-content"><p>[Text Here]</p></div>
+<div class="summary-content"><p>Similar to another project, the <code>date</code> has been recorded as an object type and, as the target feature, will be converted to datetime format to extract the required temporal components.</p></div>
+
+<p><code>.info()</code> reveals the dataset to contain ~10.5M rows and 3 columns (represented by <code>.head()</code>).</p>
 </div>
 
 <!-- SECTION 2 -->
