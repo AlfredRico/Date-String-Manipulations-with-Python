@@ -417,10 +417,21 @@ memory usage: 239.8+ MB
 
 <!-- SECTION 2 -->
 <div class="subsection">
-<div class="subsection-header">Data Cleaning</div>
+<div class="subsection-header">Feature Engineering</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<p>At this phase of the project, the <code>date</code> column is converted to a proper datetime format using <code>pd.to_datetime()</code></p>
+<p>Four new columns, <code>week, month, quarter</code> and <code>year</code>, are created using the datetime.strftime() method with associated format codes.</p>
+<details><summary>View Code</summary><pre>
+# Create columns
+df['week'] = df['date'].dt.strftime('%Y-W%V')
+df['month'] = df['date'].dt.strftime('%Y-%m')
+df['quarter'] = df['date'].dt.to_period('Q').dt.strftime('%Y-Q%q')
+df['year'] = df['date'].dt.strftime('%Y') 
+
+# Check
+df.head(10)
+
+</pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
