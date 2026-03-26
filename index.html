@@ -258,58 +258,19 @@ body.light-mode .df-table thead {
 }
 
 
-/* =========================
-   DESKTOP READABILITY
-========================= */
-
 @media (min-width: 1024px) {
-
-  body {
-    line-height: 1.85;
-  }
-
-  p {
-    margin-bottom: 18px;
-    max-width: 900px;
-  }
-
+  body { line-height: 1.85; }
+  p { margin-bottom: 18px; max-width: 900px; }
   .subsection-content p,
-  .summary-content p {
-    margin-bottom: 16px;
-  }
-
-  h1 {
-    margin-bottom: 16px;
-  }
-
-  h2 {
-    margin-top: 70px;
-    margin-bottom: 18px;
-  }
-
-  .subsection-header {
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  .summary-content {
-    margin-top: 10px;
-  }
-
-  .results {
-    margin-top: 20px;
-    padding: 18px;
-  }
-
-  table {
-    margin-top: 12px;
-  }
+  .summary-content p { margin-bottom: 16px; }
+  h1 { margin-bottom: 16px; }
+  h2 { margin-top: 70px; margin-bottom: 18px; }
+  .subsection-header { margin-top: 30px; margin-bottom: 10px; }
+  .summary-content { margin-top: 10px; }
+  .results { margin-top: 20px; padding: 18px; }
+  table { margin-top: 12px; }
 }
 
-
-/* =========================
-   MOBILE OPTIMIZATION
-========================= */
 
 @media (max-width: 768px) {
 
@@ -333,21 +294,12 @@ body.light-mode .df-table thead {
     margin-bottom: 10px;
   }
 
-  .subsection-header {
-    font-size: 1.05rem;
-  }
+  .subsection-header { font-size: 1.05rem; }
+  .summary-header { font-size: 0.95rem; }
 
-  .summary-header {
-    font-size: 0.95rem;
-  }
+  p { margin-bottom: 12px; }
 
-  p {
-    margin-bottom: 12px;
-  }
-
-  .results {
-    padding: 12px;
-  }
+  .results { padding: 12px; }
 
   .df-table th,
   .df-table td {
@@ -355,9 +307,7 @@ body.light-mode .df-table thead {
     font-size: 0.8rem;
   }
 
-  img {
-    border-radius: 4px;
-  }
+  img { border-radius: 4px; }
 
   .controls {
     flex-wrap: wrap;
@@ -368,6 +318,30 @@ body.light-mode .df-table thead {
     font-size: 0.8rem;
     padding: 6px 8px;
   }
+
+  /* =========================
+     CODE BLOCK FIX
+  ========================= */
+
+  pre {
+    overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
+    padding: 10px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    background: #111;
+    border-radius: 6px;
+  }
+
+  body.light-mode pre {
+    background: #f4f4f4;
+  }
+
+  details {
+    overflow: hidden;
+  }
+
 }
 
 </style>
