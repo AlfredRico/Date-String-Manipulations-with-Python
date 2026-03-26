@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>[Insert Text]</title>
+<title>Date String Manipulations</title>
 
 <style>
 body {
@@ -237,7 +237,7 @@ details summary {
   </a>
 </div>
 
-<h1>[Insert Text]</h1>
+<h1>Date String Manipulations</h1>
 <p style="margin-top:-6px; margin-bottom:25px; font-size:0.95rem; color:#9ca3af;">
   by Alfred Rico
 </p>
@@ -273,12 +273,16 @@ details summary {
 
 <h2>Project Background</h2>
 <div class="collapsible-content">
-  <p>[Insert Text]</p>
+  <p>The data used for this project represents cloud-to-ground lightning activity recorded by Vaisala's National Lightning Detection Network (NLDN), a system that tracks lightning strikes across the United States.</p>
+  <p>To make analysis of the data easier, the National Centers for Environmental Information distribute individual lightning strikes into spatial grids where all strikes that occur within a 0.1&deg latitude by 0.1&deg longitude are grouped and summarized daily. Each grid cell is represented by a pair of coordinates cooresponding to the center of that tile.</p>
+  <p>In this way, instead of working with millions of individual strike events, the data is structured by location and time with each row representing total strikes recorded within a tile on a given day.</p>
+  <p>Due to the substantial size of the <code>csv</code> file used in this project, converting it to Parquet format was not sufficient to reduce its size, and it could not be uploaded to the repository. The data is instead available through the <code>bigquery-public-data.noaa_lightning.lightning_strikes</code> public table accessible through Google BigQuery.</p>
 </div>
 
 <h2>Project Goal</h2>
 <div class="collapsible-content">
-  <p>[Insert Text]</p>
+  <p>Geotemporal aggregation of the data lends practicality to data exploration especially when working with date features, which will be the focus of this project.</p>
+  <p>Data collected from the National Oceanic and Atmospheric Association (NOAA) holding records of 2016-2018 lightning strikes will be used to calculate weekly sums and quarterly lightning strike totals and then visualized.</p>
 </div>
 
 <div class="section">
