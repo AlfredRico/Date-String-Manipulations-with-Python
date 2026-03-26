@@ -475,6 +475,7 @@ df.head(10)
 <div class="summary-header">Summary</div>
 <div class="summary-content"><p>The <code>date</code> column was converted from a string to a datetime format to enable time based calculations. New temporal features (<code>week, month, quarter</code> and <code>year</code>) were then extracted using datetime methods and formatting, allowing easier aggregation and analysis of geotemporal patterns.</p></div>
 </div>
+  
 <!-- SECTION 3 -->
 <div class="subsection">
 <div class="subsection-header">2018 Weekly Strikes Visualization</div>
@@ -529,10 +530,35 @@ plt.show()
 
 <!-- SECTION 4 -->
 <div class="subsection">
-<div class="subsection-header">Visualization & Analysis</div>
+<div class="subsection-header">2016-2018 Quarterly Strikes Visualization</div>
 <div class="subsection-content">
-<p>[Text Here]</p>
-<details><summary>View Code</summary><pre>[Code Here]</pre></details>
+<p>Analysis now shifts focus to quarterly lightning strikes for the full date range of avalaible data. Because it is easiest to work with numbers in millions, <code>.div(1000000)</code> will be used during aggregation before plotting.</p>
+<p>A <code>numbr_of_strikes_formatted</code> column is added representing the number in millions.</p>
+<p>A function is implemented to help label each bar in the graph with its corresponding <code>number_of_strikes_formatted</code> text. The pyplot function uses positional arguments x, y, and s for x-axis, y-axis, and text respectively.</p>
+<details><summary>View Code</summary><pre>
+# 2016-2018 data by quarter and sum
+df_by_quarter = df.groupby(['quarter']).sum(numeric_only=True).reset_index()
+
+# Text converted to millions
+df_by_quarter['number_of_strikes_formatted'] = df_by_quarter['number_of_strikes'].div(1000000).round(1).astype(str) + 'M'
+
+df_by_quarter.head()
+
+# pyplot function
+def addlabels(x, y, labels):
+    for i in range(len(x)):
+        plt.text(i, y[i], labels[i], ha = 'center', va = 'bottom')
+
+# Plot
+plt.figure(figsize = (15, 5))
+plt.bar(x = df_by_quarter['quarter'], height = df_by_quarter['number_of_strikes'])
+addlabels(df_by_quarter['quarter'], df_by_quarter['number_of_strikes'], df_by_quarter['number_of_strikes_formatted'])
+plt.plot()
+plt.xlabel('Quarter')
+plt.ylabel('Number of lightning strikes')
+plt.title('Number of lightning strikes per quarter (2016-2018)')
+plt.show()
+</pre></details>
 <div class="results"><strong>Results:</strong><p>[Results Here]</p></div>
 </div>
 </div>
