@@ -272,13 +272,56 @@ function toggleMode() {
 
 
 <style>
-
-/* ===== MOBILE TITLE FIX ===== */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem !important;
     line-height: 1.25;
   }
+}
+</style>
+
+<style>
+
+/* ===== DAY MODE IMPROVEMENTS ===== */
+body.light-mode {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body.light-mode p,
+body.light-mode li {
+  color: #334155; /* slate tone, better readability */
+}
+
+/* headings clearer */
+body.light-mode h2 {
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ===== KEY TAKEAWAYS BLOCK ===== */
+body.light-mode h2:first-of-type + .collapsible-content {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+/* bullets inside takeaways */
+body.light-mode h2:first-of-type + .collapsible-content li {
+  margin-bottom: 10px;
+}
+
+/* links */
+body.light-mode a {
+  color: #2563eb;
+}
+
+/* code */
+body.light-mode code {
+  background: #f1f5f9;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 </style>
